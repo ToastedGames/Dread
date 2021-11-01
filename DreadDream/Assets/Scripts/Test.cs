@@ -13,7 +13,7 @@ public class Test : MonoBehaviour
 
         Debug.Log("Hello.");
 
-
+    }
     // Update is called once per frame
     void Update()
     {

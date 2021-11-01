@@ -35,6 +35,7 @@ In diesem spielt der Spieler in einem Traum und muss kleine Aufgaben erledigen. 
     ```
 
 ### Unity
+* WICHTIG: Damit keine Dinge überschrieben werden darf jeder nur an einer Szene gleichzeitig arbeiten. Dafür gibt es ein Trello Board (siehe unten)
 * Groß und Kleinschreibung beachten:
     * Objekte in der Herachie mit Großbuchstabe anfangend und mit Leerzeichen 
       (Bsp: Objekt Name)

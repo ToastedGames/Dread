@@ -12,7 +12,6 @@ In diesem spielt der Spieler in einem Traum und muss kleine Aufgaben erledigen. 
 
 ## Regeln zum Mitwirken
 
-* Linux nicht erwünscht ;)
 
 ### Coding
 

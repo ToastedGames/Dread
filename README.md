@@ -40,12 +40,16 @@ In diesem spielt der Spieler in einem Traum und muss kleine Aufgaben erledigen. 
     * ALLE Dateien in Pascal case (Bsp: DateiName)
 * Ordnerstrukturen:
     * Alle Skripte in den Ordner *Skripte*
-    * Alle Grafischen dateien in Ordner Sprites
-    * 
+    * Alle Grafischen dateien in Ordner *Sprites*
+    * **nur Scenes** in den Ordner *Scenes*
+    * Alle Prefabs, Tilemap, etc. assets in *Prefabs* 
+* Unterordner sind noch nicht näher definiert
 
 ### Art
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Jemand kompetentes soll hier mal was hinschreiben
 
 ### Projekt Management
+
+* [Trelloboard](https://trello.com/invite/b/BIaJoIbF/da053866bf4f2ce9fb017f454b049d03/dread)
+* [Trelloboard_Dateimanagement](https://trello.com/invite/b/a6mDkHjm/814a002cf57fb5b8932ac8dd1034aaec/dateien-version-control)

@@ -13,8 +13,6 @@ In diesem spielt der Spieler in einem Traum und muss kleine Aufgaben erledigen. 
 
 ## Regeln zum Mitwirken
 
-* Linux nicht erwünscht ;)
-
 ### Coding
 
 * Möglichst modular schreiben (Bsp: Player Controller auf (fast) jedes Objekt schieben und es funktioniert)

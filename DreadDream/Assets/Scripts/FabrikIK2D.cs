@@ -20,10 +20,11 @@ public class FabrikIK2D : MonoBehaviour
         positions = new Vector3[subdivisions];
         desiredPositions = new Vector3[subdivisions];
         lr = GetComponent<LineRenderer>();
+        lr.positionCount = subdivisions;
         for (int i = 0; i < subdivisions; i++)
         {
-            desiredPositions[0] = transform.right * i * maxDistance / subdivisions;
-            positions[0] = transform.right * i * maxDistance / subdivisions;
+            desiredPositions[i] = transform.position + transform.right * i * maxDistance / subdivisions;
+            positions[i] = transform.position + transform.right * i * maxDistance / subdivisions;
         }
     }
 
@@ -48,14 +49,14 @@ public class FabrikIK2D : MonoBehaviour
                 desiredPositions[desiredPositions.Length - 1] = target.position;
                 for (int i = 0; i < desiredPositions.Length - 1; i++)
                 {
-                    desiredPositions[desiredPositions.Length - 2 - i] = (desiredPositions[desiredPositions.Length - 2 - i] - desiredPositions[desiredPositions.Length - 1 - i]).normalized * maxDistance / subdivisions;
+                    desiredPositions[desiredPositions.Length - 2 - i] = desiredPositions[desiredPositions.Length - 1 - i] + (desiredPositions[desiredPositions.Length - 2 - i] - desiredPositions[desiredPositions.Length - 1 - i]).normalized * maxDistance / subdivisions;
                 }
 
                 //Forward IK loop
                 desiredPositions[0] = transform.position;
                 for (int i = 0; i < desiredPositions.Length - 1; i++)
                 {
-                    desiredPositions[1 + i] = (desiredPositions[1 + i] - desiredPositions[i]).normalized * maxDistance / subdivisions;
+                    desiredPositions[1 + i] = desiredPositions[i] + (desiredPositions[1 + i] - desiredPositions[i]).normalized * maxDistance / subdivisions;
                 }
             }
         }
@@ -63,7 +64,7 @@ public class FabrikIK2D : MonoBehaviour
         {
             for (int i = 0; i < desiredPositions.Length; i++)
             {
-                desiredPositions[0] = (target.position - transform.position) * i * maxDistance / subdivisions;
+                desiredPositions[i] = transform.position + (target.position - transform.position).normalized * i * maxDistance / subdivisions;
             }
         }
     }

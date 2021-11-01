@@ -201,9 +201,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -280,8 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876780d6bee940d4d9b31321b39d4ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subdivisions: 5
-  maxDistance: 3
+  subdivisions: 20
+  maxDistance: 4
   errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 989464317}

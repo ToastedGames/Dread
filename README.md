@@ -3,7 +3,8 @@
 Hier ist unser Project Dread von den cooleren Teilnehmern der Games Talente Akademie:
 * [ToastedGames](https://github.com/ToastedGames)
 * [Schnitzelreaper](https://github.com/Schnitzelreaper)
-* [Michael](github.com/hghjgfjgf)
+* [Michael](https://github.com/hghjgfjgf)
+* [Leon Henning](https://github.com/LeonHenning)
 
 ## Beschreibung
 

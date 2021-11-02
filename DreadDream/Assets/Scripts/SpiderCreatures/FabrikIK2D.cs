@@ -9,7 +9,8 @@ public class FabrikIK2D : MonoBehaviour
     public float errorMargin = 0.01f;
     public float ajustSpeed = 20f;
     public Transform target;
-    
+    public Transform pole;
+
     LineRenderer lr;
     Vector3[] positions;
     Vector3[] desiredPositions;
@@ -41,8 +42,18 @@ public class FabrikIK2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        FabrikSolve();
+    }
+
+    private void FabrikSolve()
+    {
         if (Vector3.Distance(transform.position, target.position) < maxDistance)
         {
+            if (pole)
+                for (int i = 0; i < subdivisions; i++)
+                {
+                    desiredPositions[i] = transform.position + (pole.position - transform.position).normalized * i * maxDistance / subdivisions;
+                }
             for (int t = 0; t < 5; t++)
             {
                 //Backwards IK loop
@@ -68,6 +79,5 @@ public class FabrikIK2D : MonoBehaviour
             }
         }
     }
-
 
 }

@@ -23,7 +23,7 @@ public class LegPositions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //sets the new targets of the legs if the legEnd is too far from the desiredLegPosition or an obsacle cuts of a leg
         for (int i = 0; i < legEnds.Length; i++)
         {
             

@@ -263,7 +263,15 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
+  - {x: 0, y: 6.16, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -272,7 +280,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9920635
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -342,7 +350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 4385097}
   pole: {fileID: 0}
@@ -698,6 +705,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 60848892}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &331201665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331201666}
+  m_Layer: 0
+  m_Name: Monsterspawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331201666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331201665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9008737, y: 0.46187803, z: -0.11885648}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356565207
 GameObject:
@@ -1239,7 +1277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 64997052}
   pole: {fileID: 0}
@@ -1555,7 +1592,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 1356368751}
   pole: {fileID: 0}
@@ -1716,7 +1752,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 1942212207}
   pole: {fileID: 0}
@@ -1908,7 +1943,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 1527204087}
   pole: {fileID: 0}
@@ -2636,7 +2670,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 754455930}
   pole: {fileID: 0}
@@ -3347,7 +3380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 1672465920}
   pole: {fileID: 0}
@@ -3508,7 +3540,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subdivisions: 20
   maxDistance: 4
-  errorMargin: 0.01
   ajustSpeed: 20
   target: {fileID: 2038382941}
   pole: {fileID: 0}

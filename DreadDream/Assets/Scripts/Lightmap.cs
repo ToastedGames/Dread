@@ -15,6 +15,7 @@ public class Lightmap : MonoBehaviour
 
     void Update()
     {
+        DestroyImmediate(tex);
         tex = toTexture2D(LightCam.targetTexture);
 
         print(GetLight(Input.mousePosition, true));

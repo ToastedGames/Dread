@@ -7,21 +7,25 @@ public class Lightmap : MonoBehaviour
     public Camera LightCam;
 
     private Vector2Int textureScale;
-
+    public Texture2D tex;
     void Awake()
     {
         textureScale = new Vector2Int(LightCam.targetTexture.width, LightCam.targetTexture.height);
     }
 
+    void Update()
+    {
+        tex = toTexture2D(LightCam.targetTexture);
+
+        print(GetLight(Input.mousePosition, true));
+    }
     public float GetLight(Vector2 point)
     {
         Vector2 screenPoint = LightCam.WorldToScreenPoint(point);
         Vector2 screenToImageScale = new Vector2(LightCam.pixelWidth * 1f / textureScale.x, LightCam.pixelHeight * 1f / textureScale.y);
         Vector2Int imagePoint = new Vector2Int(Mathf.RoundToInt(screenPoint.x / screenToImageScale.x), Mathf.RoundToInt(screenPoint.y / screenToImageScale.y));
         if (imagePoint.x < 0 | imagePoint.y < 0 | imagePoint.x > textureScale.x | imagePoint.y > textureScale.y) Debug.LogError("Point " + point + " outside Lightcanvas");
-        Texture2D tex = toTexture2D(LightCam.targetTexture);
         Color pixel = tex.GetPixel(imagePoint.x, imagePoint.y);
-        DestroyImmediate(tex);
         return (pixel.r + pixel.g + pixel.b) / 3;
     }
     public float GetLight(Vector2 point, bool screenSpace)
@@ -31,9 +35,7 @@ public class Lightmap : MonoBehaviour
         Vector2 screenToImageScale = new Vector2(LightCam.pixelWidth * 1f / textureScale.x, LightCam.pixelHeight * 1f / textureScale.y);
         Vector2Int imagePoint = new Vector2Int(Mathf.RoundToInt(screenPoint.x / screenToImageScale.x), Mathf.RoundToInt(screenPoint.y / screenToImageScale.y));
         if (imagePoint.x < 0 | imagePoint.y < 0 | imagePoint.x > textureScale.x | imagePoint.y > textureScale.y) Debug.LogError("Point " + point + " outside Lightcanvas");
-        Texture2D tex = toTexture2D(LightCam.targetTexture);
         Color pixel = tex.GetPixel(imagePoint.x, imagePoint.y);
-        DestroyImmediate(tex);
         return (pixel.r + pixel.g + pixel.b) / 3;
     }
 

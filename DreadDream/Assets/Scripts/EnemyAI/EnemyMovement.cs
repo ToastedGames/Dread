@@ -23,10 +23,17 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform playerTransform;
 
+    Rigidbody2D rb;
+
     Vector3 targetPos;
+    Vector3 moveDirection;
+
 
     private void Start()
     {
+        if (useRigidbody)
+            rb = GetComponent<Rigidbody2D>();
+
         ChangeState(state);
     }
 
@@ -53,10 +60,12 @@ public class EnemyMovement : MonoBehaviour
             targetPos = playerTransform.position;
         }
 
-        if(state == EnemyMovementState.Neutral && Vector3.Distance(transform.position, targetPos) < .1f)
+        if(state == EnemyMovementState.Neutral && Vector3.Distance(transform.position, targetPos) < .3f)
         {
             NextWaypoint();
         }
+
+        moveDirection = (targetPos - transform.position).normalized;
     }
 
     private void NextWaypoint()
@@ -83,10 +92,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveWithRigidbody()
     {
-
+        rb.MovePosition(transform.position + (moveDirection * speed * Time.fixedDeltaTime));
     }
     private void MoveWithTransform()
     {
-        transform.position += (targetPos - transform.position).normalized * speed * Time.fixedDeltaTime;
+        transform.Translate(moveDirection * speed * Time.fixedDeltaTime);
     }
 }

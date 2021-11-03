@@ -1807,7 +1807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightCam: {fileID: 307508328}
-  resolution: 1
   tex: {fileID: 0}
 --- !u!4 &983407277
 Transform:

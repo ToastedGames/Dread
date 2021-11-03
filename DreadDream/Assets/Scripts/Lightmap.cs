@@ -7,7 +7,6 @@ public class Lightmap : MonoBehaviour
     public static Lightmap instance;
     public Camera LightCam;
 
-    public float resolution;
     private Vector2Int textureScale;
     public Texture2D tex;
 
@@ -21,10 +20,6 @@ public class Lightmap : MonoBehaviour
     {
         DestroyImmediate(tex);
         tex = toTexture2D(LightCam.targetTexture);
-
-        print(GetLight(Input.mousePosition, true));
-
-        //SetCanvasSize(new Rect(-25, 25, 50, 50));
     }
 
 
@@ -77,15 +72,4 @@ public class Lightmap : MonoBehaviour
         tex.Apply();
         return tex;
     }
-    /*/
-    public void SetCanvasSize(Rect rect)
-    {
-        LightCam.transform.position = rect.position;
-        LightCam.orthographicSize = rect.height / 2;
-        LightCam.transform.GetChild(0).localScale = Vector3.one * rect.height;
-        LightCam.targetTexture.height = Mathf.RoundToInt(LightCam.pixelHeight * resolution);
-        LightCam.targetTexture.width = LightCam.targetTexture.height * LightCam.pixelWidth / LightCam.pixelHeight;
-        textureScale = new Vector2Int(LightCam.targetTexture.width, LightCam.targetTexture.height);
-    }
-    //*/
 }

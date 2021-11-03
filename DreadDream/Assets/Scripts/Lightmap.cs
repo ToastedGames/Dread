@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Lightmap : MonoBehaviour
 {
+    public static Lightmap instance;
     public Camera LightCam;
 
     private Vector2Int textureScale;
     public Texture2D tex;
     void Awake()
     {
+        instance = this;
         textureScale = new Vector2Int(LightCam.targetTexture.width, LightCam.targetTexture.height);
     }
 

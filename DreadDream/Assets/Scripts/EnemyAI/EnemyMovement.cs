@@ -6,7 +6,8 @@ public enum EnemyMovementState
 {
     Stop,
     Neutral,
-    Agressive
+    Agressive,
+    Flee
 }
 
 public class EnemyMovement : MonoBehaviour

@@ -20,8 +20,8 @@ public class Lightmap : MonoBehaviour
     {
         DestroyImmediate(tex);
         tex = toTexture2D(LightCam.targetTexture);
-    }
 
+    }
 
     public float GetLight(Vector2 point)
     {
@@ -61,7 +61,6 @@ public class Lightmap : MonoBehaviour
         Color pixel = tex.GetPixel(imagePoint.x, imagePoint.y);
         return (pixel.r + pixel.g + pixel.b) / 3;
     }
-
 
     Texture2D toTexture2D(RenderTexture rTex)
     {

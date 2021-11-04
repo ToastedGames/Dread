@@ -9,6 +9,11 @@ public class EnemyAIFollow : EnemyAI
     int currentWaypointIndex;
     Vector3 targetPos;
 
+    private void Start()
+    {
+        UpdateTargetPos();
+    }
+
     private void Update()
     {
         if (Vector3.Distance(transform.position, targetPos) < .3f)
@@ -26,5 +31,11 @@ public class EnemyAIFollow : EnemyAI
             currentWaypointIndex = 0;
 
         targetPos = waypointTransforms[currentWaypointIndex].position;
+    }
+
+    public void UpdateTargetPos()
+    {
+        targetPos = waypointTransforms[currentWaypointIndex].position;
+        movement.setTargetPos(targetPos);
     }
 }

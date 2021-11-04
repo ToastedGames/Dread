@@ -6,24 +6,50 @@ public enum EnemyMovementState
 {
     Stop,
     Neutral,
-    Agressive,
-    Flee
+    Agressive
 }
 
-public class EnemyAIFollowAgressive : MonoBehaviour
+[RequireComponent(typeof(EnemyAIAgressive), typeof(EnemyAIFollow))]
+public class EnemyAIFollowAgressive : EnemyAI
 {
-    /*public void ChangeState(EnemyMovementState state)
+    public EnemyMovementState state;
+
+    EnemyAIAgressive agressiveAI;
+    EnemyAIFollow followAI;
+
+    private void Start()
+    {
+        agressiveAI = GetComponent<EnemyAIAgressive>();
+        followAI = GetComponent<EnemyAIFollow>();
+
+        ChangeState(state);
+    }
+
+
+    public void ChangeState(EnemyMovementState state)
     {
         this.state = state;
 
         switch (state)
         {
             case EnemyMovementState.Stop:
-                targetPos = transform.position;
+                followAI.enabled = false;
+                agressiveAI.enabled = false;
+
+                movement.setTargetPos(transform.position);
                 break;
+
             case EnemyMovementState.Neutral:
-                targetPos = waypointTransforms[currentWaypointIndex].position;
+                followAI.enabled = true;
+                agressiveAI.enabled = false;
+
+                followAI.UpdateTargetPos();
+                break;
+
+            case EnemyMovementState.Agressive:
+                agressiveAI.enabled = true;
+                followAI.enabled = false;
                 break;
         }
-    }*/
+    }
 }

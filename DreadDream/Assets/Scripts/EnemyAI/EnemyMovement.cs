@@ -28,12 +28,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(useRigidbody)
+        if(Vector3.Distance(transform.position, targetPos) > (speed/100f))
         {
-            MoveWithRigidbody();
-        } else
-        {
-            MoveWithTransform();
+            if (useRigidbody)
+            {
+                MoveWithRigidbody();
+            }
+            else
+            {
+                MoveWithTransform();
+            }
         }
     }
 

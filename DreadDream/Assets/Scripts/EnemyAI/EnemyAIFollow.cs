@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAIFollow : EnemyAI
 {
     public Transform[] waypointTransforms;
+    //Make Debug lines for the Path Visible;
+    public bool showPath = true;
 
     int currentWaypointIndex;
     Vector3 targetPos;
@@ -37,5 +39,17 @@ public class EnemyAIFollow : EnemyAI
     {
         targetPos = waypointTransforms[currentWaypointIndex].position;
         movement.setTargetPos(targetPos);
+    }
+
+    //Draw Graph Gizmos in Sceneview
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        for (int i = 0; i < waypointTransforms.Length; i++)
+        {
+            Vector3 nextPos = waypointTransforms.Length - 1 > i ? waypointTransforms[i + 1].position : waypointTransforms[0].position;
+            Gizmos.DrawLine(waypointTransforms[i].position, nextPos);
+            Gizmos.DrawSphere(waypointTransforms[i].position, .2f);
+        }
     }
 }

@@ -38,6 +38,12 @@ public class EnemyMovement : MonoBehaviour
             {
                 MoveWithTransform();
             }
+        } else
+        {
+            if(useRigidbody)
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 

@@ -279,6 +279,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571798701462893379}
+  - component: {fileID: 5110876740215911866}
+  - component: {fileID: 8464145725452294617}
   m_Layer: 0
   m_Name: SpiderTarget
   m_TagString: Untagged
@@ -301,6 +303,33 @@ Transform:
   m_Father: {fileID: 1571798701752025117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5110876740215911866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571798701462893376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8a27c4996727d41a7156c2c3d4aed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  useRigidbody: 0
+--- !u!114 &8464145725452294617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571798701462893376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80357f6ddc1ab7146adbc8d4aadf0700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointTransforms: []
 --- !u!1 &1571798701752025122
 GameObject:
   m_ObjectHideFlags: 0

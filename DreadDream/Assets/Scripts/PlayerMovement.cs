@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.up = (Vector2)cam.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
 
-        float xInput = Input.GetAxis("Horizontal");
-        float yInput = Input.GetAxis("Vertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float yInput = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(xInput, yInput);
         /*if (Input.GetKey(KeyCode.W)) movement += Vector2.up;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(movement.normalized * Time.deltaTime * speed + rb.position);
+        rb.velocity = movement.normalized * Time.fixedDeltaTime * speed;
+        //rb.MovePosition(movement.normalized * Time.fixedDeltaTime * speed + rb.position);
     }
 }

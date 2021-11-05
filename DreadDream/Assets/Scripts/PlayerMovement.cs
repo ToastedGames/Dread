@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = movement.normalized * Time.fixedDeltaTime * speed;
-        //rb.MovePosition(movement.normalized * Time.fixedDeltaTime * speed + rb.position);
+        //rb.velocity = movement.normalized * Time.fixedDeltaTime * speed;
+        rb.MovePosition(movement.normalized * Time.fixedDeltaTime * speed + rb.position);
     }
 }

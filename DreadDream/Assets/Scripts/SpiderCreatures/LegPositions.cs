@@ -11,6 +11,7 @@ public class LegPositions : MonoBehaviour
     public Transform desiredPosition;
     public Transform[] legEnds;
     public Transform[] desiredLegPositions;
+    public float[] stepSizes;
     public LayerMask obstacles;
 
     Rigidbody2D rb;
@@ -27,7 +28,7 @@ public class LegPositions : MonoBehaviour
         for (int i = 0; i < legEnds.Length; i++)
         {
             
-            if(Vector3.Distance(legEnds[i].position, desiredLegPositions[i].position) > maxStepDistance || Vector3.Distance(legEnds[i].position,transform.position) > legLength)
+            if(Vector3.Distance(legEnds[i].position, desiredLegPositions[i].position) > stepSizes[i] || Vector3.Distance(legEnds[i].position,transform.position) > legLength)
             {              
 
                 legEnds[i].position = desiredLegPositions[i].position;
@@ -41,7 +42,10 @@ public class LegPositions : MonoBehaviour
 
             
         }
+        Vector2 dir = -(transform.position - desiredPosition.position).normalized;
+        rb.rotation = Quaternion.Slerp(Quaternion.Euler(0,0,rb.rotation), Quaternion.Euler(0,0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90), 10 * Time.deltaTime).eulerAngles.z;
         rb.position = Vector3.Lerp(transform.position, desiredPosition.position, speed * Time.deltaTime);
         
     }
+
 }

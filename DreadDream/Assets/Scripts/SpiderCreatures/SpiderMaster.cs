@@ -46,6 +46,7 @@ public class SpiderMaster : MonoBehaviour
             GameObject desiredLegEnd = leg.transform.GetChild(0).gameObject;
             legEnd.transform.position = Vector3.zero;
             legEnd.name = $"LegEnd [{i}]";
+            legEnd.transform.parent = transform;
             controller.legEnds[i] = legEnd.transform;
             desiredLegEnd.transform.position = transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f)).normalized * (legLength * 0.75f) ;
             controller.desiredLegPositions[i] = desiredLegEnd.transform;

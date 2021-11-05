@@ -214,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7222147669332923866}
+  - {fileID: 7140213533629157583}
   m_Father: {fileID: 1571798700403543059}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -334,7 +334,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1571798701220800137
+--- !u!1001 &1368318022834037660
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -354,6 +354,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: ClampVelocityModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -367,7 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -383,11 +391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: VelocityModule.speedModifier.scalar
@@ -395,10 +403,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: ClampVelocityModule.magnitude.scalar
-      value: 3.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: InitialModule.startSpeed.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
@@ -419,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
-      value: 0.36486816
+      value: 0.22973013
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
@@ -431,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
-      value: -1.2939907
+      value: -0.525679
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
@@ -447,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
-      value: -1.2939907
+      value: -0.525679
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
@@ -475,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outWeight
-      value: 0.16709511
+      value: 0.12853469
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460177, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
@@ -495,11 +511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460179, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460179, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460179, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: m_LocalPosition.z
@@ -535,12 +551,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8208408030655460180, guid: 574debf59f21c0e4094909c176289175, type: 3}
       propertyPath: m_Name
-      value: Particle System
+      value: Particle System (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 574debf59f21c0e4094909c176289175, type: 3}
---- !u!4 &7222147669332923866 stripped
+--- !u!4 &7140213533629157583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8208408030655460179, guid: 574debf59f21c0e4094909c176289175, type: 3}
-  m_PrefabInstance: {fileID: 1571798701220800137}
+  m_PrefabInstance: {fileID: 1368318022834037660}
   m_PrefabAsset: {fileID: 0}

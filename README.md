@@ -4,7 +4,6 @@ Hier ist unser Project Dread von den cooleren Teilnehmern der Games Talente Akad
 * [ToastedGames](https://github.com/ToastedGames)
 * [Schnitzelreaper](https://github.com/Schnitzelreaper)
 * [Michael](https://github.com/hghjgfjgf)
-* [Leon Henning](https://github.com/LeonHenning)
 
 ## Beschreibung
 
